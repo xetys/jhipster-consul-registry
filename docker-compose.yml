@@ -1,0 +1,13 @@
+version: '2'
+services:
+  jhipster-consul-registry:
+        build: .
+        ports:
+            - 8300:8300
+            - 8500:8500
+            - 8600:8600
+        volumes:
+            - ./config/:/config
+        environment:
+            - CONFIG_MODE=filesystem
+            - INIT_SLEEP_SECONDS=5
